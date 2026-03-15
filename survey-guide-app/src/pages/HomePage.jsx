@@ -13,15 +13,15 @@ export default function HomePage() {
             <header className="mobile-header">
                 <div className="header-left">
                     <span className="header-logo">🌱</span>
-                    <span className="header-title">LIFT Guide</span>
+                    <span className="header-title">LIFT Church Survey Guide (unofficial)</span>
                 </div>
                 <Link to="/about" className="header-about-btn">
                     About
                 </Link>
-            </header>
+            </header >
 
             {/* Tab switcher — the two main sections */}
-            <div className="tab-bar">
+            < div className="tab-bar" >
                 <button
                     className={`tab-btn ${activeTab === "icebreakers" ? "active" : ""}`}
                     onClick={() => setActiveTab("icebreakers")}
@@ -36,19 +36,20 @@ export default function HomePage() {
                     <span className="tab-icon">💬</span>
                     Spirituality
                 </button>
-            </div>
+            </div >
 
             {/* Content area */}
-            <main className="tab-content">
+            < main className="tab-content" >
                 {activeTab === "icebreakers" && (
                     <IceBreakerTab
                         openCategory={openCategory}
                         setOpenCategory={setOpenCategory}
                     />
-                )}
+                )
+                }
                 {activeTab === "spirituality" && <SpiritualityTab />}
-            </main>
-        </div>
+            </main >
+        </div >
     );
 }
 
