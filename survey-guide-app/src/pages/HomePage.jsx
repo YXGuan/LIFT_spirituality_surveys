@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { iceBreakers, triageQuestion, mainBranches } from "../data/surveyData";
+import { getSurveyData } from "../data/dataManager";
 import "./HomePage.css";
 
 export default function HomePage() {
     const [activeTab, setActiveTab] = useState("icebreakers");
     const [openCategory, setOpenCategory] = useState(null);
+    const [data, setData] = useState(null);
 
+    useEffect(() => {
+        setData(getSurveyData());
+    }, []);
+
+    if (!data) return null;
     return (
         <div className="home-page">
             {/* Compact header */}
@@ -42,19 +48,25 @@ export default function HomePage() {
             < main className="tab-content" >
                 {activeTab === "icebreakers" && (
                     <IceBreakerTab
+                        iceBreakers={data.iceBreakers}
                         openCategory={openCategory}
                         setOpenCategory={setOpenCategory}
                     />
                 )
                 }
-                {activeTab === "spirituality" && <SpiritualityTab />}
+                {activeTab === "spirituality" && (
+                    <SpiritualityTab
+                        triageQuestion={data.triageQuestion}
+                        mainBranches={data.mainBranches}
+                    />
+                )}
             </main >
         </div >
     );
 }
 
 /* ── Ice Breaker Tab ───────────────────────────── */
-function IceBreakerTab({ openCategory, setOpenCategory }) {
+function IceBreakerTab({ iceBreakers, openCategory, setOpenCategory }) {
     return (
         <div className="icebreaker-tab">
             <p className="tab-hint">
@@ -98,7 +110,7 @@ function IceBreakerTab({ openCategory, setOpenCategory }) {
 }
 
 /* ── Spirituality Tab ──────────────────────────── */
-function SpiritualityTab() {
+function SpiritualityTab({ triageQuestion, mainBranches }) {
     return (
         <div className="spirituality-tab">
             {/* Triage prompt */}

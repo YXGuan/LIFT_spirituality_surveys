@@ -1,0 +1,95 @@
+.upload-section {
+    background: rgba(34, 197, 94, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 32px;
+}
+
+.upload-section h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin: 0 0 6px;
+}
+
+.upload-section p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 16px;
+    line-height: 1.5;
+}
+
+.upload-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dl-btn,
+.up-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.dl-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+}
+
+.dl-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.up-btn {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #4ade80;
+}
+
+.up-btn:hover {
+    background: rgba(34, 197, 94, 0.2);
+}
+
+.reset-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: #64748b;
+    font-size: 13px;
+    padding: 8px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.reset-btn:hover {
+    color: #ef4444;
+}
+
+.status-msg {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    animation: fadeIn 0.2s;
+}
+
+.status-msg.success {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+}
+
+.status-msg.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}

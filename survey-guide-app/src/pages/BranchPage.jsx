@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { mainBranches } from "../data/surveyData";
+import { getSurveyData } from "../data/dataManager";
 import "./BranchPage.css";
 
 export default function BranchPage() {
     const { branchId } = useParams();
-    const branch = mainBranches.find((b) => b.id === branchId);
+    const [branch, setBranch] = useState(null);
     const [activeSubBranch, setActiveSubBranch] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const data = getSurveyData();
+        const found = data.mainBranches.find((b) => b.id === branchId);
+        setBranch(found);
+        setLoading(false);
+    }, [branchId]);
+
+    if (loading) return null;
 
     if (!branch) {
         return (

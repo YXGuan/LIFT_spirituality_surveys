@@ -1,8 +1,23 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { frameworkPurpose } from "../data/surveyData";
+import { getSurveyData } from "../data/dataManager";
+import UploadSection from "../components/UploadSection";
 import "./AboutPage.css";
 
 export default function AboutPage() {
+    const [dataTrigger, setDataTrigger] = useState(0);
+    const [isCustom, setIsCustom] = useState(false);
+
+    useEffect(() => {
+        const data = getSurveyData();
+        setIsCustom(data.isCustom);
+    }, [dataTrigger]);
+
+    const handleDataUpdate = () => {
+        setDataTrigger(prev => prev + 1);
+    };
+
     return (
         <div className="about-page">
             <header className="about-header">
@@ -71,6 +86,8 @@ export default function AboutPage() {
                         </li>
                     </ul>
                 </section>
+
+                <UploadSection onDataUpdated={handleDataUpdate} />
             </main>
         </div>
     );
