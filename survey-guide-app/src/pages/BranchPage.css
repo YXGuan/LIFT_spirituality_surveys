@@ -1,0 +1,258 @@
+/* ── Branch Page — mobile-first ── */
+
+.branch-page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Header ── */
+.branch-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: rgba(12, 12, 24, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.back-btn {
+    font-size: 14px;
+    font-weight: 500;
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.back-btn:active {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.branch-page-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bc, #4ade80);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ── Title ── */
+.branch-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 16px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.branch-title-icon {
+    font-size: 32px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--bc, #4ade80) 12%, transparent);
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.branch-title-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* ── Body ── */
+.branch-body {
+    flex: 1;
+    padding: 16px 16px 40px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ── Info sections ── */
+.info-section {
+    margin-bottom: 24px;
+}
+
+.info-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 8px;
+}
+
+.info-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    margin: 0;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border-left: 3px solid var(--bc, #4ade80);
+}
+
+/* ── Questions — THE HERO SECTION ── */
+.questions-section {
+    margin-bottom: 24px;
+}
+
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.question-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    transition: background 0.15s ease;
+}
+
+.question-item:active {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.question-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--bc, #4ade80) 18%, transparent);
+    color: var(--bc, #4ade80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.question-txt {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #f1f5f9;
+    font-weight: 400;
+}
+
+/* ── Cautions ── */
+.cautions-section {
+    margin-bottom: 24px;
+}
+
+.caution-item {
+    padding: 12px 14px;
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.1);
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #fbbf24;
+    margin-bottom: 6px;
+}
+
+.caution-item::before {
+    content: "⚡ ";
+}
+
+/* ── Sub-branches ── */
+.sub-section {
+    margin-bottom: 24px;
+}
+
+.sub-note {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 12px;
+}
+
+.sub-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.sub-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.sub-pill:active {
+    transform: scale(0.96);
+}
+
+.sub-pill.active {
+    background: color-mix(in srgb, var(--bc, #4ade80) 12%, transparent);
+    border-color: var(--bc, #4ade80);
+    color: #f1f5f9;
+}
+
+.sub-questions {
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub-questions-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 12px;
+}
+
+/* ── Desktop ── */
+@media (min-width: 768px) {
+    .branch-title-text {
+        font-size: 26px;
+    }
+
+    .question-txt {
+        font-size: 17px;
+    }
+
+    .branch-body {
+        padding: 24px 16px 60px;
+    }
+}

@@ -1,21 +1,6 @@
-.app {
+.app-page {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-}
-
-.app-main {
-  flex: 1;
-}
-
-.app-footer {
-  text-align: center;
-  padding: 32px;
-  color: #475569;
-  font-size: 13px;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.app-footer p {
-  margin: 0;
 }
