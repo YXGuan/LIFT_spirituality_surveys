@@ -1,0 +1,219 @@
+.icebreaker-section {
+    padding: 60px 32px;
+}
+
+.section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 36px;
+}
+
+.section-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+    font-size: 15px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Usage tips */
+.icebreaker-usage-tips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 36px;
+}
+
+.tip-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.tip-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.tip-card p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Category cards */
+.icebreaker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.icebreaker-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    padding: 20px 22px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.icebreaker-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--card-accent, rgba(255, 255, 255, 0.12));
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+}
+
+.icebreaker-card.expanded {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--card-accent, rgba(255, 255, 255, 0.15));
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.icebreaker-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.icebreaker-card-icon {
+    font-size: 28px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--card-accent) 12%, transparent);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.icebreaker-card-meta {
+    flex: 1;
+    min-width: 0;
+}
+
+.icebreaker-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 3px;
+}
+
+.icebreaker-card-usage {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+    font-style: italic;
+}
+
+.expand-indicator {
+    font-size: 14px;
+    color: #475569;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.expand-indicator.open {
+    transform: rotate(180deg);
+}
+
+/* Questions list */
+.icebreaker-questions-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    padding-top: 0;
+}
+
+.icebreaker-card.expanded .icebreaker-questions-list {
+    max-height: 400px;
+    opacity: 1;
+    padding-top: 16px;
+}
+
+.icebreaker-question-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.icebreaker-question-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.question-bullet {
+    color: var(--card-accent, #4ade80);
+    font-size: 18px;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.question-text {
+    font-size: 14px;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .icebreaker-section {
+        padding: 40px 16px;
+    }
+
+    .icebreaker-usage-tips {
+        grid-template-columns: 1fr;
+    }
+
+    .icebreaker-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

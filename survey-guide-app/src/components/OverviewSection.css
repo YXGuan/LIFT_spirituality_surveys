@@ -1,0 +1,154 @@
+.overview-section {
+    padding: 80px 32px 60px;
+}
+
+.overview-hero {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.overview-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4ade80;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.overview-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #f1f5f9;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 24px;
+}
+
+.title-gradient {
+    background: linear-gradient(135deg, #4ade80 0%, #22d3ee 50%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.overview-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #94a3b8;
+    max-width: 640px;
+    margin: 0 auto 48px;
+}
+
+.overview-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.flow-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.flow-step:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.flow-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.flow-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0 0 2px;
+}
+
+.flow-content p {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+}
+
+.flow-arrow {
+    color: #475569;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .overview-section {
+        padding: 48px 16px 40px;
+    }
+
+    .overview-title {
+        font-size: 32px;
+    }
+
+    .overview-description {
+        font-size: 15px;
+    }
+
+    .overview-flow {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .flow-step {
+        width: 100%;
+        max-width: 300px;
+    }
+}
